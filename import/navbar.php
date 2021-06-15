@@ -1,3 +1,5 @@
+<link rel="stylesheet" type="text/css" href="./css/navbar.css">
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
     <div class="container-fluid" style="font-size: 22px">
         <a href="menu.php"><img src="./imagens/icon-principal.png" width="60" class="navbar-brand"></a>
@@ -14,9 +16,9 @@
                         Cadastros
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Cadastro de Pacientes</a></li>
-                        <li><a class="dropdown-item" href="#">Cadastro de Médicos</a></li>
-                        <li><a class="dropdown-item" href="#">Cadastro de Funcionários</a></li>
+                        <li><a class="dropdown-item" href="cadastroPacientes.php">Cadastro de Pacientes</a></li>
+                        <li><a class="dropdown-item" href="cadastroMedicos.php">Cadastro de Médicos</a></li>
+                        <li><a class="dropdown-item" href="cadastroFuncionarios.php">Cadastro de Funcionários</a></li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
@@ -24,9 +26,9 @@
                     </ul>
                 </li>
             </ul>
-            <span class="px-4">USUÁRIO: felipe</span>
-            <form class="d-flex">
-                <button class="btn btn-lg btn-outline-dark" type="submit">Logout<i class="fas fa-sign-out-alt" style="margin-left: 0.5vw"></i></button>
+            <span class="underline">USUÁRIO: felipe</span>
+            <form class="ps-4 d-flex">
+                <button class="btn-outline logout" type="submit">Logout<i class="fas fa-sign-out-alt" style="margin-left: 0.5vw"></i></button>
             </form>
         </div>
     </div>

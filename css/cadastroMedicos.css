@@ -1,0 +1,65 @@
+.botao-pequeno {
+    width: 40px;
+    height: 40px;
+    padding-right: 7.5px;
+    border-radius: 20px;
+    font-size: 22.5px;
+    text-align: center;
+}
+
+.editar {
+    color: #0198bb;
+    border-color: #0198bb;
+    background-color: transparent;
+}
+
+.editar:hover {
+    color: white;
+    border-color: #0198bb;
+    background-color: #0198bb;
+}
+
+.deletar {
+    color: #0198bb;
+    border-color: #0198bb;
+    background-color: transparent;
+}
+
+.deletar:hover {
+    color: white;
+    border-color: #0198bb;
+    background-color: #0198bb;
+}
+
+.visualizar {
+    color: #0198bb;
+    border-color: #0198bb;
+    background-color: transparent;
+}
+
+.visualizar:hover {
+    color: white;
+    border-color: #0198bb;
+    background-color: #0198bb;
+}
+
+.btn-pesquisa {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+    color: black;
+    padding: 5px 25px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.pesquisar {
+    border-color: black;
+    color: black;
+}
+
+.pesquisar:hover {
+    border-color: black;
+    background-color: black;
+    color: white;
+}

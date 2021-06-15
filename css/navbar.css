@@ -1,0 +1,24 @@
+.underline {
+    border-bottom: 2px solid #02CAF2;
+}
+
+.btn-outline {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+    color: black;
+    padding: 5px 25px;
+    font-size: 22.5px;
+    cursor: pointer;
+}
+
+.logout {
+    border-color: #0198bb;
+    color: #0198bb;
+}
+
+.logout:hover {
+    border-color: #01596b;
+    background-color: #01596b;
+    color: white;
+}
