@@ -24,12 +24,19 @@
     <h1 class="text-center ps-3 pt-5 pb-5 display-6">Cadastro de Médicos</h1>
 
     <div class="container">
-        <form class="d-flex">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn-pesquisa pesquisar" type="submit"><i class="fas fa-search"></i></button>
-        </form>
+        <div class="row">
+            <div class="col">
+                <button class="btn-novo" onclick="JavaScript:location.href='frmInsMedico.php'"><span class="pe-2">Novo</span><i class="fas fa-plus-circle"></i></button>
+            </div>
+            <div class="col">
+                <form class="d-flex">
+                    <input class="form-control me-2 fs-5" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn-pesquisa" type="submit"><i class="fas fa-search"></i></button>
+                </form>
+            </div>
+        </div>
         <br>
-        <table class="table table-striped table-hover">
+        <table class="table table-striped table-hover align-middle fs-5">
             <thead>
                 <tr>
                     <th scope="col">#</th>

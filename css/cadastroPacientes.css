@@ -5,21 +5,24 @@
     border-radius: 20px;
     font-size: 22.5px;
     text-align: center;
+    color: black;
+    border-color: black;
+    background-color: transparent;
 }
 
-.editar {
+.editar:hover {
     color: white;
     border-color: orange;
     background-color: orange;
 }
 
-.deletar {
+.deletar:hover {
     color: white;
     border-color: red;
     background-color: red;
 }
 
-.visualizar {
+.visualizar:hover {
     color: white;
     border-color: blue;
     background-color: blue;
@@ -31,17 +34,32 @@
     background-color: transparent;
     color: black;
     padding: 5px 25px;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
-}
-
-.pesquisar {
     border-color: black;
     color: black;
 }
 
-.pesquisar:hover {
+.btn-pesquisa:hover {
     border-color: black;
     background-color: black;
     color: white;
+}
+
+.btn-novo {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+    color: black;
+    padding: 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-color: black;
+    color: black;
+}
+
+.btn-novo:hover {
+    color: white;
+    border-color: #198754;
+    background-color: #198754;
 }
