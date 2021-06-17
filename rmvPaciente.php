@@ -1,5 +1,4 @@
 <?php
-
     $codigo = trim($_POST['frmCodigo']);
 
     include 'conexao.php';
