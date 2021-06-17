@@ -1,3 +1,14 @@
+<?php
+include 'conexao.php';
+
+$pdo = Conexao::conectar();
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+$sql = "SELECT * FROM paciente";
+$row = 0;
+
+$listaPacientes = $pdo->query($sql);
+?>
+
 <!doctype html>
 <html lang="pt-br" class="h-100">
 
@@ -40,57 +51,39 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
+                    <th scope="col">Código</th>
                     <th scope="col">Nome</th>
-                    <th scope="col">DRM</th>
+                    <th scope="col">Sobrenome</th>
+                    <th scope="col">CEP</th>
                     <th scope="col">Cidade</th>
                     <th scope="col">Ações</th>
                 </tr>
             </thead>
             <tbody>
+                <?php
+                    foreach ($listaPacientes as $paciente) {
+                ?>
                 <tr>
-                    <th scope="row">1</th>
-                    <td>Felipe</td>
-                    <td>123</td>
-                    <td>Assis</td>
+                    <th scope="row"><?php $row = $row + 1; echo $paciente['codigo']; ?></th>
+                    <td><?php echo $paciente['codigo']; ?></td>
+                    <td><?php echo $paciente['nome']; ?></td>
+                    <td><?php echo $paciente['sobrenome']; ?></td>
+                    <td><?php echo $paciente['cep']; ?></td>
+                    <td><?php echo $paciente['cidade']; ?></td>
                     <td>
-                        <span class="pe-1"><button class="botao-pequeno editar"><i class="fas fa-edit"></i></button></span>
-                        <span class="pe-1"><button class="botao-pequeno deletar"><i class="fas fa-trash-alt"></i></button></span>
-                        <button class="botao-pequeno visualizar"><i class="fas fa-eye"></i></i></button>
+                        <span class="pe-1"><button class="botao-pequeno editar" onclick="JavaScript:location.href='frmEdtPaciente.php?codigo=' + 
+                        <?php echo $paciente['codigo'];?>"><i class="fas fa-edit"></i></button></span>
+                        
+                        <span class="pe-1"><button class="botao-pequeno deletar" onclick="JavaScript:location.href='frmRmvPaciente.php?codigo=' + 
+                        <?php echo $paciente['codigo'];?>"><i class="fas fa-trash-alt"></i></button></span>
+                        
+                        <button class="botao-pequeno visualizar" onclick="JavaScript:location.href='frmVisPaciente.php?codigo=' + 
+                        <?php echo $paciente['codigo'];?>"><i class="fas fa-eye"></i></i></button>
                     </td>
                 </tr>
-                <tr>
-                    <th scope="row">2</th>
-                    <td>Jacob</td>
-                    <td>456</td>
-                    <td>Assis</td>
-                    <td>
-                        <span class="pe-1"><button class="botao-pequeno editar"><i class="fas fa-edit"></i></button></span>
-                        <span class="pe-1"><button class="botao-pequeno deletar"><i class="fas fa-trash-alt"></i></button></span>
-                        <button class="botao-pequeno visualizar"><i class="fas fa-eye"></i></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">3</th>
-                    <td>Renata</td>
-                    <td>789</td>
-                    <td>Assis</td>
-                    <td>
-                        <span class="pe-1"><button class="botao-pequeno editar"><i class="fas fa-edit"></i></button></span>
-                        <span class="pe-1"><button class="botao-pequeno deletar"><i class="fas fa-trash-alt"></i></button></span>
-                        <button class="botao-pequeno visualizar"><i class="fas fa-eye"></i></i></button>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">4</th>
-                    <td>Rafaela</td>
-                    <td>101112</td>
-                    <td>Assis</td>
-                    <td>
-                        <span class="pe-1"><button class="botao-pequeno editar"><i class="fas fa-edit"></i></button></span>
-                        <span class="pe-1"><button class="botao-pequeno deletar"><i class="fas fa-trash-alt"></i></button></span>
-                        <button class="botao-pequeno visualizar"><i class="fas fa-eye"></i></i></button>
-                    </td>
-                </tr>
+                <?php
+                    }
+                ?>
             </tbody>
         </table>
     </div>
