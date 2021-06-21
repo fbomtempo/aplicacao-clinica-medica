@@ -8,7 +8,7 @@
 
     $pdo = Conexao::conectar();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT * FROM paciente WHERE codigo=?;";
+    $sql = "SELECT * FROM funcionario WHERE codigo=?;";
     $query = $pdo->prepare($sql);
     $query->execute(array($codigo));
 
@@ -18,6 +18,7 @@
     $sobrenome = $dados['sobrenome'];;
     $nascimento = $dados['nascimento'];
     $sexo = $dados['sexo'];
+    $cargo = $dados['cargo'];
     $rg = $dados['rg'];
     $cpf = $dados['cpf'];
     $telres = $dados['telres'];
@@ -30,7 +31,7 @@
     $numero = $dados['numero'];
     $bairro = $dados['bairro'];
     $complemento = $dados['complemento']; 
-    
+
     Conexao::desconectar();
 ?>
 
@@ -48,15 +49,15 @@
     <!-- CSS e/ou ícone -->
     <link rel="shortcut icon" href="./imagens/icon-principal.ico">
 
-    <title>Editar Paciente</title>
+    <title>Editar Funcionário</title>
 </head>
 
 <body class="d-flex flex-column h-100">
     <!-- Include Navbar -->
     <?php include './import/navbar.php'; ?>
     <div class="container">
-        <h1 class="text-left pt-5 pb-5 display-6">Editar Paciente</h1>
-        <form action="edtPaciente.php" method="POST" class="row g-3 needs-validation" novalidate>
+        <h1 class="text-left pt-5 pb-5 display-6">Editar Funcionário</h1>
+        <form action="edtFuncionario.php" method="POST" class="row g-3 needs-validation" novalidate>
             <div class="col-md-1">
                 <label for="frmCodigo" class="form-label">Código</label>
                 <input type="number" class="form-control" id="frmCodigo" name="frmCodigo" value="<?php echo $codigo ?>" readonly>
@@ -105,27 +106,17 @@
                     Por favor selecione um sexo.
                 </div>
             </div>
-            <div class="col-md-3">
-                <label for="frmRg" class="form-label">RG</label>
-                <input type="text" class="form-control" id="frmRg" name="frmRg" required>
+            <div class="col-md-4">
+                <label for="frmCargo" class="form-label">Cargo</label>
+                <input type="text" class="form-control" id="frmCargo" name="frmCargo" value="<?php echo $cargo ?>" required>
                 <div class="valid-feedback">
                     Parece bom!
                 </div>
                 <div class="invalid-feedback">
-                    Informe o RG.
+                    Informe o cargo.
                 </div>
             </div>
-            <div class="col-md-3">
-                <label for="frmCpf" class="form-label">CPF</label>
-                <input type="text" class="form-control" id="frmCpf" name="frmCpf" required>
-                <div class="valid-feedback">
-                    Parece bom!
-                </div>
-                <div class="invalid-feedback">
-                    Informe o CPF.
-                </div>
-            </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-6"></div>
             <div class="col-md-3">
                 <label for="frmRg" class="form-label">RG</label>
                 <input type="text" class="form-control" id="frmRg" name="frmRg" value="<?php echo $rg ?>" required>
@@ -270,7 +261,7 @@
             <div class="col-12 pt-4 pb-5">
                 <button class="btn btn-lg btn-primary" type="submit">Salvar</button>
                 <span class="px-1"></span>
-                <button class="btn btn-lg btn-danger" type="reset" onclick="JavaScript:location.href='cadastroPacientes.php'">Cancelar</button>
+                <button class="btn btn-lg btn-danger" type="reset" onclick="JavaScript:location.href='cadastroFuncionarios.php'">Cancelar</button>
             </div>
         </form>
     </div>

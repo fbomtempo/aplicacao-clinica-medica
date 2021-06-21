@@ -1,10 +1,3 @@
-<?php
-    session_start();
-    if (!isset($_SESSION['usuario'])) {
-        header("location: index.php");
-    }
-?>
-
 <!-- CSS e/ou ícone -->
 <link rel="shortcut icon" href="./imagens/icon-principal.ico">
 <link rel="stylesheet" type="text/css" href="./css/navbar.css">
@@ -29,15 +22,15 @@
                             <li><a class="dropdown-item" href="cadastroPacientes.php">Cadastro de Pacientes</a></li>
                             <li><a class="dropdown-item" href="cadastroMedicos.php">Cadastro de Médicos</a></li>
                             <li><a class="dropdown-item" href="cadastroFuncionarios.php">Cadastro de Funcionários</a></li>
-                            <li>
+                            <!-- <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
+                            <li><a class="dropdown-item" href="#">Something else here</a></li> -->
                         </ul>
                     </li>
                 </ul>
                 <span class="pe-4"><span class="underline">USUÁRIO: <?php echo $_SESSION['usuario']; ?></span></span>
-                <form class="d-flex">
+                <form class="d-flex pt-lg-0 pt-3">
                     <button class="btn-outline logout" type="button" onclick="JavaScript:location.href='logout.php'">Logout<i class="fas fa-sign-out-alt" style="margin-left: 0.5vw"></i></button>
                 </form>
             </div>

@@ -1,7 +1,7 @@
 .botao-pequeno {
     width: 40px;
     height: 40px;
-    padding-right: 7.5px;
+    padding-right:7.5px;
     border-radius: 20px;
     font-size: 22.5px;
     text-align: center;
@@ -40,9 +40,27 @@
     color: black;
 }
 
-.btn-pesquisa:hover {
+.btn-limpar {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+    color: black;
+    padding: 5px 6.5px;
+    font-size: 20px;
+    cursor: pointer;
+    border-color: black;
+    color: black;
+}
+
+.pesquisar:hover {
     border-color: black;
     background-color: black;
+    color: white;
+}
+
+.limpar:hover {
+    border-color: #0d6efd;
+    background-color: #0d6efd;
     color: white;
 }
 

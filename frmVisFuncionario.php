@@ -3,21 +3,22 @@
     include 'verificaLogin.php';
 
     include 'conexao.php';
-    
+
     $codigo = $_GET['codigo'];
-    
+
     $pdo = Conexao::conectar();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT * FROM paciente WHERE codigo=?;";
+    $sql = "SELECT * FROM funcionario WHERE codigo=?;";
     $query = $pdo->prepare($sql);
     $query->execute(array($codigo));
 
     $dados = $query->fetch(PDO::FETCH_ASSOC);
-    
+
     $nome = $dados['nome'];;
     $sobrenome = $dados['sobrenome'];;
     $nascimento = $dados['nascimento'];
     $sexo = $dados['sexo'];
+    $cargo = $dados['cargo'];
     $rg = $dados['rg'];
     $cpf = $dados['cpf'];
     $telres = $dados['telres'];
@@ -29,7 +30,7 @@
     $endereco = $dados['endereco'];
     $numero = $dados['numero'];
     $bairro = $dados['bairro'];
-    $complemento = $dados['complemento'];
+    $complemento = $dados['complemento']; 
 
     Conexao::desconectar();
 ?>
@@ -48,14 +49,14 @@
     <!-- CSS e/ou ícone -->
     <link rel="shortcut icon" href="./imagens/icon-principal.ico">
 
-    <title>Visualizar Paciente</title>
+    <title>Visualizar Funcionário</title>
 </head>
 
 <body class="d-flex flex-column h-100">
     <!-- Include Navbar -->
     <?php include './import/navbar.php'; ?>
     <div class="container">
-        <h1 class="text-left pt-5 pb-5 display-6">Visualizar Paciente</h1>
+        <h1 class="text-left pt-5 pb-5 display-6">Visualizar Funcionário</h1>
         <form class="row g-3 needs-validation" novalidate>
             <div class="col-md-1">
                 <label class="form-label">Código</label>
@@ -79,15 +80,20 @@
                     <option selected><?php echo $sexo ?></option>
                 </select>
             </div>
+            <div class="col-md-4">
+                <label class="form-label">Cargo</label>
+                <input type="text" class="form-control" id="frmCargo" value="<?php echo $cargo ?>" readonly>
+            </div>
+            <div class="col-md-6"></div>
             <div class="col-md-3">
                 <label class="form-label">RG</label>
                 <input type="text" class="form-control" id="frmRg" value="<?php echo $rg ?>" readonly>
             </div>
             <div class="col-md-3">
                 <label class="form-label">CPF</label>
-                <input type="text" class="form-control" id="frmCpf" value="<?php echo $cpf ?>" readonly>
+                <input type="text" class="form-control" id="frmCpf" name="frmCpf" value="<?php echo $cpf ?>" readonly>
             </div>
-            <div class="col-md-4"></div>
+            <div class="col-md-6"></div>
             <div class="col-md-4">
                 <label class="form-label">Telefone Residencial</label>
                 <input type="text" class="form-control" id="frmTelres" value="<?php echo $telres ?>" readonly>
@@ -118,7 +124,7 @@
                 </select>
             </div>
             <div class="col-md-7">
-                <label for="frmEndereco" class="form-label">Endereço</label>
+                <label class="form-label">Endereço</label>
                 <input type="text" class="form-control" id="frmEndereco" value="<?php echo $endereco ?>" readonly>
             </div>
             <div class="col-md-2">
@@ -134,7 +140,7 @@
                 <input type="text" class="form-control" id="frmComplemento" value="<?php echo $complemento ?>" readonly>
             </div>
             <div class="col-12 pt-4 pb-5">
-                <button class="btn btn-lg btn-primary" type="reset" onclick="JavaScript:location.href='cadastroPacientes.php'">Voltar</button>
+                <button class="btn btn-lg btn-primary" type="reset" onclick="JavaScript:location.href='cadastroFuncionarios.php'">Voltar</button>
             </div>
         </form>
     </div>
@@ -144,10 +150,10 @@
 
     <!-- Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
-    
+
     <!-- Font Awesome JS -->
     <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" data-auto-a11y="true"></script>
-    
+
     <!-- Validação -->
     <script src="./js/validacaoForms.js"></script>
 </body>

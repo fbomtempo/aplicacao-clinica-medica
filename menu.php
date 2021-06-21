@@ -1,3 +1,7 @@
+<?php
+    // Verifica se o usuário está logado
+    include 'verificaLogin.php';
+?>
 
 <!doctype html>
 <html lang="pt-br" class="h-100">
@@ -18,6 +22,7 @@
 </head>
 
 <body class="d-flex flex-column h-100">
+    <!-- Include Navbar -->
     <?php include './import/navbar.php'; ?>
     <h1 class="text-center pt-5 display-3">Bem-vindo(a) de volta, <?php echo $_SESSION['nome']; ?>!</h1>
     <div class="container" style="padding-top: 9vh">

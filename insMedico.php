@@ -6,6 +6,8 @@
     $sobrenome = trim($_POST['frmSobrenome']);
     $nascimento = trim($_POST['frmNascimento']);
     $sexo = $_POST['frmSexo'];
+    $crm = $_POST['frmCrm'];
+    $especialidade = trim($_POST['frmEspecialidade']);
     $rg = trim($_POST['frmRg']);
     $cpf = trim($_POST['frmCpf']);
     $telres = trim($_POST['frmTelres']);
@@ -20,12 +22,15 @@
     $complemento = trim($_POST['frmComplemento']); 
 
     $pdo = Conexao::conectar();
+    
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "UPDATE paciente SET nome=?, sobrenome=?, nascimento=?, sexo=?, rg=?, cpf=?,
-    telres=?, telcel=?, email=?, cep=?, cidade=?, estado=?, endereco=?, numero=?, bairro=?, complemento=?
-    WHERE codigo=?";
+    $sql = "INSERT INTO medico (codigo, nome, sobrenome, nascimento, sexo, crm, especialidade, rg, 
+    cpf, telres, telcel, email, cep, cidade, estado, endereco, numero, bairro, complemento) 
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?);";
     $query = $pdo->prepare($sql);
-    $query->execute(array($nome, $sobrenome, $nascimento, $sexo, $rg, $cpf, $telres, $telcel, 
-    $email, $cep, $cidade, $estado, $endereco, $numero, $bairro, $complemento, $codigo));
-    header("location: cadastroPacientes.php");
+    $query->execute(array($codigo, $nome, $sobrenome, $nascimento, $sexo, $crm, $especialidade, 
+    $rg, $cpf, $telres, $telcel, $email, $cep, $cidade, $estado, $endereco, $numero, $bairro, $complemento));
+
+    Conexao::desconectar();
+    header("location: cadastroMedicos.php");
 ?>

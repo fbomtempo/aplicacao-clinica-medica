@@ -29,4 +29,3 @@
             self::$cont = null;
         }
     }
-?>
