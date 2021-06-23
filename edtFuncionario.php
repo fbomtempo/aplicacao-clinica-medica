@@ -21,6 +21,7 @@
     $complemento = trim($_POST['frmComplemento']); 
 
     $pdo = Conexao::conectar();
+
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "UPDATE funcionario SET nome=?, sobrenome=?, nascimento=?, sexo=?, cargo=?, rg=?, cpf=?,
     telres=?, telcel=?, email=?, cep=?, cidade=?, estado=?, endereco=?, numero=?, bairro=?, complemento=?
@@ -28,5 +29,7 @@
     $query = $pdo->prepare($sql);
     $query->execute(array($nome, $sobrenome, $nascimento, $sexo, $cargo, 
     $rg, $cpf, $telres, $telcel, $email, $cep, $cidade, $estado, $endereco, $numero, $bairro, $complemento, $codigo));
+    
+    Conexao::desconectar();
     header("location: cadastroFuncionarios.php");
 ?>

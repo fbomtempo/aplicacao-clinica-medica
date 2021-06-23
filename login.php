@@ -12,10 +12,16 @@
     $usuario = $query->fetch(PDO::FETCH_ASSOC);
     Conexao::desconectar();
 
+    if ($usuario['usuario'] != false) {
+        header("location: index.php?erro=1");
+    }
     if ($usuario['senha'] == $senha) {
         session_start();
         $_SESSION['usuario'] = $user;
         $_SESSION['nome'] = $usuario['nome'];
         header("location: menu.php");
+    }
+    else {
+        header("location: index.php?erro=1");
     }
 ?>

@@ -1,3 +1,11 @@
+<?php
+    if (isset($_GET['erro'])) { 
+        if ($_GET['erro'] == 1) {
+            echo '<script>window.alert("Login ou senha inválido!")</script>';
+        }
+    }
+?> 
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +24,7 @@
     <title>Login</title>
 </head>
 
-<body>
+<body onload="loginErrado('Login ou senha inválidos!')">
     <img src="./imagens/background.jpg" style="position: fixed">
     <div class="wrapper fadeInDown">
         <div id="formContent">
@@ -37,8 +45,7 @@
             <!-- Remind Passowrd -->
             <div id="formFooter">
                 <a class="underlineHover" href="#">Forgot Password?</a>
-            </div>
-
+            </div>         
         </div>
     </div>
 
@@ -47,6 +54,14 @@
 
     <!-- Validação -->
     <script src="./js/validacaoForms.js"></script>
+    <!--<script type="text/javascript">
+        function loginErrado(msg) {
+            var erro = document.getElementById('erro').value;
+            if (erro == 1) {
+                window.alert(msg);
+            }
+        }
+    </script>-->
 </body>
 
 </html>

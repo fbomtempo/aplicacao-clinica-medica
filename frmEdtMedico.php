@@ -58,7 +58,7 @@
     <?php include './import/navbar.php'; ?>
     <div class="container">
         <h1 class="text-left pt-5 pb-5 display-6">Editar Médico</h1>
-        <form action="edtMedico.php" method="POST" class="row g-3 needs-validation" novalidate>
+        <form action="edtMedico.php" method="POST" class="row g-3 needs-validation mb-3" novalidate>
             <div class="col-md-1">
                 <label for="frmCodigo" class="form-label">Código</label>
                 <input type="number" class="form-control" id="frmCodigo" name="frmCodigo" value="<?php echo $codigo ?>" readonly>
@@ -245,7 +245,7 @@
                     Informe o endereço.
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-1">
                 <label for="frmNumero" class="form-label">Número</label>
                 <input type="number" class="form-control" id="frmNumero" name="frmNumero" value="<?php echo $numero ?>" required>
                 <div class="valid-feedback">
@@ -255,7 +255,7 @@
                     Informe um número.
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <label for="frmBairro" class="form-label">Bairro</label>
                 <input type="text" class="form-control" id="frmBairro" name="frmBairro" value="<?php echo $bairro ?>" required>
                 <div class="valid-feedback">
@@ -276,7 +276,6 @@
             </div>
         </form>
     </div>
-    <br>
     <!-- Include Footer -->
     <?php include './import/footer.php'; ?>
 

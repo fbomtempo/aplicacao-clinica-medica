@@ -58,90 +58,90 @@
     <?php include './import/navbar.php'; ?>
     <div class="container">
         <h1 class="text-left pt-5 pb-5 display-6">Visualizar Médico</h1>
-        <form class="row g-3 needs-validation" novalidate>
+        <form class="row g-3 needs-validation mb-3" novalidate>
             <div class="col-md-1">
-                <label for="frmCodigo" class="form-label">Código</label>
+                <label class="form-label">Código</label>
                 <input type="number" class="form-control" id="frmCodigo" value="<?php echo $codigo ?>" readonly>
             </div>
             <div class="col-md-4">
-                <label for="frmNome" class="form-label">Nome</label>
+                <label class="form-label">Nome</label>
                 <input type="text" class="form-control" id="frmNome" value="<?php echo $nome ?>" readonly>
             </div>
             <div class="col-md-4">
-                <label for="frmSobrenome" class="form-label">Sobrenome</label>
+                <label class="form-label">Sobrenome</label>
                 <input type="text" class="form-control" id="frmSobrenome" value="<?php echo $sobrenome ?>" readonly>
             </div>
             <div class="col-md-3">
-                <label for="frmNascimento" class="form-label">Nascimento</label>
+                <label class="form-label">Nascimento</label>
                 <input type="date" class="form-control" id="frmNascimento" value="<?php echo $nascimento ?>" readonly>
             </div>
             <div class="col-md-2">
-                <label for="frmSexo" class="form-label">Sexo</label>
+                <label class="form-label">Sexo</label>
                 <select class="form-select" id="frmSexo" value="<?php echo $sexo ?>" disabled>
                     <option selected><?php echo $sexo ?></option>
                 </select>
             </div>
             <div class="col-md-3">
-                <label for="frmCrm" class="form-label">CRM</label>
+                <label class="form-label">CRM</label>
                 <input type="text" class="form-control" id="frmCrm" value="<?php echo $crm ?>" readonly>
             </div>
             <div class="col-md-4">
-                <label for="frmEspecialidade" class="form-label">Especialidade</label>
+                <label class="form-label">Especialidade</label>
                 <input type="text" class="form-control" id="frmEspecialidade" value="<?php echo $especialidade ?>" readonly>
             </div>
             <div class="col-md-3"></div>
             <div class="col-md-3">
-                <label for="frmRg" class="form-label">RG</label>
+                <label class="form-label">RG</label>
                 <input type="text" class="form-control" id="frmRg" value="<?php echo $rg ?>" readonly>
             </div>
             <div class="col-md-3">
-                <label for="frmCpf" class="form-label">CPF</label>
+                <label class="form-label">CPF</label>
                 <input type="text" class="form-control" id="frmCpf" value="<?php echo $cpf ?>" readonly>
             </div>
             <div class="col-md-6"></div>
             <div class="col-md-4">
-                <label for="frmTelres" class="form-label">Telefone Residencial</label>
+                <label class="form-label">Telefone Residencial</label>
                 <input type="text" class="form-control" id="frmTelres" value="<?php echo $telres ?>" readonly>
             </div>
             <div class="col-md-4">
-                <label for="frmTelcel" class="form-label">Telefone Celular</label>
+                <label class="form-label">Telefone Celular</label>
                 <input type="text" class="form-control" id="frmTelcel" value="<?php echo $telcel ?>" readonly>
             </div>
             <div class="col-md-4">
-                <label for="frmEmail" class="form-label">Email</label>
+                <label class="form-label">Email</label>
                 <div class="input-group has-validation">
                     <span class="input-group-text" id="inputGroupPrepend">@</span>
                     <input type="text" class="form-control" id="frmEmail" value="<?php echo $email ?>" aria-describedby="inputGroupPrepend" readonly>
                 </div>
             </div>
             <div class="col-md-3">
-                <label for="frmCep" class="form-label">CEP</label>
+                <label class="form-label">CEP</label>
                 <input type="text" class="form-control" id="frmCep" value="<?php echo $cep ?>" readonly>
             </div>
             <div class="col-md-6">
-                <label for="frmCidade" class="form-label">Cidade</label>
+                <label class="form-label">Cidade</label>
                 <input type="text" class="form-control" id="frmCidade" value="<?php echo $cidade ?>" readonly>
             </div>
             <div class="col-md-3">
-                <label for="frmEstado" class="form-label">Estado</label>
+                <label class="form-label">Estado</label>
                 <select class="form-select" id="frmEstado" value="<?php echo $estado ?>" disabled>
                     <option selected><?php echo $estado ?></option>
                 </select>
             </div>
             <div class="col-md-7">
-                <label for="frmEndereco" class="form-label">Endereço</label>
+                <label class="form-label">Endereço</label>
                 <input type="text" class="form-control" id="frmEndereco" value="<?php echo $endereco ?>" readonly>
             </div>
-            <div class="col-md-2">
-                <label for="frmNumero" class="form-label">Número</label>
+            <div class="col-md-1">
+                <label class="form-label">Número</label>
                 <input type="number" class="form-control" id="frmNumero" value="<?php echo $numero ?>" readonly>
             </div>
-            <div class="col-md-3">
-                <label for="frmBairro" class="form-label">Bairro</label>
+            <div class="col-md-4">
+                <label class="form-label">Bairro</label>
                 <input type="text" class="form-control" id="frmBairro" value="<?php echo $bairro ?>" readonly>
             </div>
             <div class="col-md-7">
-                <label for="frmComplemento" class="form-label">Complemento</label>
+                <label class="form-label">Complemento</label>
                 <input type="text" class="form-control" id="frmComplemento" value="<?php echo $complemento ?>" readonly>
             </div>
             <div class="col-12 pt-4 pb-5">
@@ -149,7 +149,6 @@
             </div>
         </form>
     </div>
-    <br>
     <!-- Include Footer -->
     <?php include './import/footer.php'; ?>
 

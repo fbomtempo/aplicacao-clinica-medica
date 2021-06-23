@@ -22,6 +22,7 @@
                             <li><a class="dropdown-item" href="cadastroPacientes.php">Cadastro de Pacientes</a></li>
                             <li><a class="dropdown-item" href="cadastroMedicos.php">Cadastro de Médicos</a></li>
                             <li><a class="dropdown-item" href="cadastroFuncionarios.php">Cadastro de Funcionários</a></li>
+                            <li><a class="dropdown-item" href="cadastroProdutos.php">Cadastro de Produtos</a></li>                            
                             <!-- <li>
                                 <hr class="dropdown-divider">
                             </li>

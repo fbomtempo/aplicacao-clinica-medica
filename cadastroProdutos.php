@@ -13,16 +13,16 @@
 
     $pdo = Conexao::conectar();
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT * FROM paciente";
+    $sql = "SELECT * FROM produto";
 
     if ($busca != '') {
-        $sql = "SELECT * FROM paciente WHERE nome LIKE '%" . $busca .  "%' ORDER BY nome, sobrenome"; 
+        $sql = "SELECT * FROM produto WHERE descricao LIKE '%" . $busca .  "%' ORDER BY descricao"; 
     }
     else {
-        $sql = "SELECT * FROM paciente"; 
+        $sql = "SELECT * FROM produto"; 
     }
 
-    $listaPacientes = $pdo->query($sql);
+    $listaProdutos = $pdo->query($sql);
 ?>
 
 <!doctype html>
@@ -37,26 +37,26 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <!-- CSS e/ou ícone -->
-    <link rel="stylesheet" type="text/css" href="./css/cadastroPacientes.css">
+    <link rel="stylesheet" type="text/css" href="./css/cadastroProdutos.css">
     <link rel="shortcut icon" href="./imagens/icon-principal.ico">
 
-    <title>Cadastro de Pacientes</title>
+    <title>Cadastro de Produtos</title>
 </head>
 
 <body class="d-flex flex-column h-100">
     <!-- Include Navbar -->
     <?php include './import/navbar.php'; ?>
-    <h1 class="text-center ps-3 pt-5 pb-5 display-6">Cadastro de Pacientes</h1>
+    <h1 class="text-center ps-3 pt-5 pb-5 display-6">Cadastro de Produtos</h1>
     <div class="container">
         <div class="row">
             <div class="col">
-                <button class="btn-novo" onclick="JavaScript:location.href='frmInsPaciente.php'"><span class="pe-2">Novo</span><i class="fas fa-plus-circle"></i></button>
+                <button class="btn-novo" onclick="JavaScript:location.href='frmInsProduto.php'"><span class="pe-2">Novo</span><i class="fas fa-plus-circle"></i></button>
             </div>
             <div class="col-xxl-6 col-xl-6 col-lg-8 col-md-9 col-sm-12 col-xs-12 pt-md-0 pt-3">
-                <form action="cadastroPacientes.php" method="GET" class="d-flex">
-                    <input class="form-control me-2 fs-5" type="search" placeholder="Digite o nome do paciente" aria-label="Search" id="busca" name="busca">
+                <form action="cadastroProdutos.php" method="GET" class="d-flex">
+                    <input class="form-control me-2 fs-5" type="search" placeholder="Digite a descrição do produto" aria-label="Search" id="busca" name="busca">
                     <button class="btn-pesquisa pesquisar" type="submit"><i class="fas fa-search"></i></button>
-                    <button class="btn-limpar pesquisar ms-2" type="button" onclick="JavaScript:location.href='cadastroPacientes.php'">Limpar</i></button>
+                    <button class="btn-limpar pesquisar ms-2" type="button" onclick="JavaScript:location.href='cadastroProdutos.php'">Limpar</i></button>
                 </form>
             </div>
         </div>
@@ -67,33 +67,31 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Código</th>
-                        <th scope="col">Nome</th>
-                        <th scope="col">Sobrenome</th>
-                        <th scope="col">Nascimento</th>
-                        <th scope="col">Cidade</th>
+                        <th scope="col">Descrição</th>
+                        <th scope="col">Preço Compra</th>
+                        <th scope="col">Estoque</th>
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php
-                        foreach ($listaPacientes as $paciente) {
+                        foreach ($listaProdutos as $produto) {
                     ?>
                         <tr>
-                            <th scope="row"><?php echo $paciente['codigo']; ?></th>
-                            <td><?php echo $paciente['codigo']; ?></td>
-                            <td><?php echo $paciente['nome']; ?></td>
-                            <td><?php echo $paciente['sobrenome']; ?></td>
-                            <td><?php echo $paciente['nascimento']; ?></td>
-                            <td><?php echo $paciente['cidade']; ?></td>
+                            <th scope="row"><?php echo $produto['codigo']; ?></th>
+                            <td><?php echo $produto['codigo']; ?></td>
+                            <td><?php echo $produto['descricao']; ?></td>
+                            <td><?php echo $produto['preco']; ?></td>
+                            <td><?php echo $produto['estoque']; ?></td>
                             <td>
-                                <span class="pe-1"><button class="botao-pequeno editar" onclick="JavaScript:location.href='frmEdtPaciente.php?codigo=' + 
-                            <?php echo $paciente['codigo']; ?>"><i class="fas fa-edit"></i></button></span>
+                                <span class="pe-1"><button class="botao-pequeno editar" onclick="JavaScript:location.href='frmEdtProduto.php?codigo=' + 
+                            <?php echo $produto['codigo']; ?>"><i class="fas fa-edit"></i></button></span>
 
-                                <span class="pe-1"><button class="botao-pequeno deletar" onclick="JavaScript:location.href='frmRmvPaciente.php?codigo=' + 
-                            <?php echo $paciente['codigo']; ?>"><i class="fas fa-trash-alt"></i></button></span>
+                                <span class="pe-1"><button class="botao-pequeno deletar" onclick="JavaScript:location.href='frmRmvProduto.php?codigo=' + 
+                            <?php echo $produto['codigo']; ?>"><i class="fas fa-trash-alt"></i></button></span>
 
-                                <button class="botao-pequeno visualizar" onclick="JavaScript:location.href='frmVisPaciente.php?codigo=' + 
-                            <?php echo $paciente['codigo']; ?>"><i class="fas fa-eye"></i></i></button>
+                                <button class="botao-pequeno visualizar" onclick="JavaScript:location.href='frmVisProduto.php?codigo=' + 
+                            <?php echo $produto['codigo']; ?>"><i class="fas fa-eye"></i></i></button>
                             </td>
                         </tr>
                     <?php

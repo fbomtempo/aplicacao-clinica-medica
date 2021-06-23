@@ -57,7 +57,7 @@
     <?php include './import/navbar.php'; ?>
     <div class="container">
         <h1 class="text-left pt-5 pb-5 display-6">Visualizar Funcionário</h1>
-        <form class="row g-3 needs-validation" novalidate>
+        <form class="row g-3 needs-validation mb-3" novalidate>
             <div class="col-md-1">
                 <label class="form-label">Código</label>
                 <input type="number" class="form-control" id="frmCodigo" value="<?php echo $codigo ?>" readonly>
@@ -127,11 +127,11 @@
                 <label class="form-label">Endereço</label>
                 <input type="text" class="form-control" id="frmEndereco" value="<?php echo $endereco ?>" readonly>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-1">
                 <label class="form-label">Número</label>
                 <input type="number" class="form-control" id="frmNumero" value="<?php echo $numero ?>" readonly>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <label class="form-label">Bairro</label>
                 <input type="text" class="form-control" id="frmBairro" value="<?php echo $bairro ?>" readonly>
             </div>
@@ -144,7 +144,6 @@
             </div>
         </form>
     </div>
-    <br>
     <!-- Include Footer -->
     <?php include './import/footer.php'; ?>
 

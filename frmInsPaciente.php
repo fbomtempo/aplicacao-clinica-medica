@@ -25,7 +25,7 @@
     <?php include './import/navbar.php'; ?>
     <div class="container">
         <h1 class="text-left pt-5 pb-5 display-6">Novo Paciente</h1>
-        <form action="insPaciente.php" method="POST" class="row g-3 needs-validation" novalidate>
+        <form action="insPaciente.php" method="POST" class="row g-3 needs-validation mb-3" novalidate>
             <div class="col-md-1">
                 <label for="frmCodigo" class="form-label">Código</label>
                 <input type="number" class="form-control" id="frmCodigo" name="frmCodigo" required>
@@ -119,7 +119,7 @@
                 <label for="frmEmail" class="form-label">Email</label>
                 <div class="input-group has-validation">
                     <span class="input-group-text" id="inputGroupPrepend">@</span>
-                    <input type="text" class="form-control" id="frmEmail" name="frmEmail" aria-describedby="inputGroupPrepend" required>
+                    <input type="email" class="form-control" id="frmEmail" name="frmEmail" aria-describedby="inputGroupPrepend" required>
                     <div class="valid-feedback">
                         Parece bom!
                     </div>
@@ -197,7 +197,7 @@
                     Informe o endereço.
                 </div>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-1">
                 <label for="frmNumero" class="form-label">Número</label>
                 <input type="number" class="form-control" id="frmNumero" name="frmNumero" required>
                 <div class="valid-feedback">
@@ -207,7 +207,7 @@
                     Informe um número.
                 </div>
             </div>
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <label for="frmBairro" class="form-label">Bairro</label>
                 <input type="text" class="form-control" id="frmBairro" name="frmBairro" required>
                 <div class="valid-feedback">
@@ -228,7 +228,6 @@
             </div>
         </form>
     </div>
-    <br>
     <!-- Include Footer -->
     <?php include './import/footer.php'; ?>
 
