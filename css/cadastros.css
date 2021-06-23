@@ -1,0 +1,141 @@
+.voltar {
+    color: black;
+    text-decoration: none;
+}
+
+.voltar:hover {
+    color:black;
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.btn-novo {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+    color: black;
+    padding: 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    border-color: black;
+    color: black;
+}
+
+.btn-novo:hover {
+    color: white;
+    border-color: #198754;
+    background-color: #198754;
+}
+
+
+.btn-pesquisa {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+    color: black;
+    padding: 5px 25px;
+    font-size: 20px;
+    cursor: pointer;
+    border-color: black;
+    color: black;
+}
+
+.btn-pesquisa:hover {
+    border-color: black;
+    background-color: black;
+    color: white;
+}
+
+.pesquisar:hover {
+    border-color: black;
+    background-color: black;
+    color: white;
+}
+
+.btn-limpar {
+    border: 2px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+    color: black;
+    padding: 5px 6.5px;
+    font-size: 20px;
+    cursor: pointer;
+    border-color: black;
+    color: black;
+}
+
+.limpar:hover {
+    border-color: black;
+    background-color: black;
+    color: white;
+}
+
+.botao-quad-pequeno {
+    width: 35px;
+    height: 35px;
+    border-radius: 5px;
+    font-size: 22.5px;
+    color: black;
+    border-color: transparent;
+    background-color: transparent;
+}
+
+#add {
+    margin-bottom: 2px;
+    padding-right: 1px;
+}
+
+#rem {
+    margin-bottom: 2px;
+    padding-right: 1px;
+}
+
+.adicionar {
+    border-color: #55c7f8;
+    background-color: #55c7f8;
+}
+
+.remover {
+    border-color: #ff3b30;
+    background-color: #ff3b30;
+}
+
+.adicionar:hover {
+    border-color: #4EB1D8;
+    background-color: #4EB1D8;
+}
+
+.remover:hover {
+    border-color: #D83129;
+    background-color: #D83129;
+}
+
+.botao-pequeno {
+    width: 40px;
+    height: 40px;
+    padding-right: 7.5px;
+    border-radius: 20px;
+    font-size: 22.5px;
+    text-align: center;
+    color: black;
+    border-color: black;
+    background-color: transparent;
+}
+
+.editar:hover {
+    color: white;
+    border-color: orange;
+    background-color: orange;
+}
+
+.deletar:hover {
+    color: white;
+    border-color: red;
+    background-color: red;
+}
+
+.visualizar:hover {
+    color: white;
+    border-color: blue;
+    background-color: blue;
+}

@@ -22,11 +22,24 @@
                             <li><a class="dropdown-item" href="cadastroPacientes.php">Cadastro de Pacientes</a></li>
                             <li><a class="dropdown-item" href="cadastroMedicos.php">Cadastro de Médicos</a></li>
                             <li><a class="dropdown-item" href="cadastroFuncionarios.php">Cadastro de Funcionários</a></li>
-                            <li><a class="dropdown-item" href="cadastroProdutos.php">Cadastro de Produtos</a></li>                            
-                            <!-- <li>
+                            <li>
                                 <hr class="dropdown-divider">
                             </li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li> -->
+                            <li><a class="dropdown-item" href="cadastroProdutos.php">Cadastro de Produtos</a></li>                            
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Inserir
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="frmInsPaciente.php">Inserir Paciente</a></li>
+                            <li><a class="dropdown-item" href="frmInsMedico.php">Inserir Médico</a></li>
+                            <li><a class="dropdown-item" href="frmInsFuncionario.php">Inserir Funcionário</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="frmInsProduto.php">Inserir Produto</a></li>
                         </ul>
                     </li>
                 </ul>

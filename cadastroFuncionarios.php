@@ -36,7 +36,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <!-- CSS e/ou ícone -->
-    <link rel="stylesheet" type="text/css" href="./css/cadastroMedicos.css">
+    <link rel="stylesheet" type="text/css" href="./css/cadastros.css">
     <link rel="shortcut icon" href="./imagens/icon-principal.ico">
 
     <title>Cadastro de Funcionários</title>
@@ -45,8 +45,13 @@
 <body class="d-flex flex-column h-100">
     <!-- Include Navbar -->
     <?php include './import/navbar.php'; ?>
-    <h1 class="text-center ps-3 pt-5 pb-5 display-6">Cadastro de Funcionários</h1>
     <div class="container">
+        <div class="col-md-12">
+            <div class="pt-5 col-md-3">
+                <a class="fs-4 voltar" href="./menu.php"><i class="fas fa-arrow-left"></i><span class="ms-2">Voltar</span></a>
+            </div>
+            <h1 class="text-center ps-3 pb-5 display-6">Cadastro de Funcionários</h1>
+        </div>
         <div class="row">
             <div class="col">
                 <button class="btn-novo" onclick="JavaScript:location.href='frmInsFuncionario.php'"><span class="pe-2">Novo</span><i class="fas fa-plus-circle"></i></button>
@@ -55,13 +60,13 @@
                 <form action="cadastroFuncionarios.php" method="GET" class="d-flex">
                     <input class="form-control me-2 fs-5" type="search" placeholder="Digite o nome do funcionário" aria-label="Search" id="busca" name="busca">
                     <button class="btn-pesquisa pesquisar" type="submit"><i class="fas fa-search"></i></button>
-                    <button class="btn-limpar pesquisar ms-2" type="button" onclick="JavaScript:location.href='cadastroFuncionarios.php'">Limpar</i></button>
+                    <button class="btn-limpar limpar ms-2" type="button" onclick="JavaScript:location.href='cadastroFuncionarios.php'">Limpar</i></button>
                 </form>
             </div>
         </div>
         <br>
         <div class="table-responsive">
-            <table class="table table-striped table-hover align-middle fs-5">
+            <table class="table table-striped table-hover align-middle fs-5 text-center">
                 <thead>
                     <tr>
                         <th scope="col">#</th>

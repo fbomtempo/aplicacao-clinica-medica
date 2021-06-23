@@ -54,6 +54,7 @@
 
     <!-- Validação -->
     <script src="./js/validacaoForms.js"></script>
+    
     <!--<script type="text/javascript">
         function loginErrado(msg) {
             var erro = document.getElementById('erro').value;

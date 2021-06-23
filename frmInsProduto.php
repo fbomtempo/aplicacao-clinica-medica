@@ -27,7 +27,7 @@
         <h1 class="text-center pt-5 pb-5 display-6">Novo Produto</h1>
         <form action="insProduto.php" method="POST" class="row g-3 needs-validation text-center mb-3" novalidate>
             <div class="col-md-12">
-                <div class="col-md-1 position-relative start-50 translate-middle-x">
+                <div class="col-md-4 position-relative start-50 translate-middle-x">
                     <label for="frmCodigo" class="form-label">Código</label>
                     <input type="number" class="form-control" id="frmCodigo" name="frmCodigo" required>
                     <div class="valid-feedback">
@@ -51,7 +51,7 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="col-md-1 position-relative start-50 translate-middle-x">
+                <div class="col-md-4 position-relative start-50 translate-middle-x">
                     <label for="frmPreco" class="form-label">Preço</label>
                     <input type="text" class="form-control" id="frmPreco" name="frmPreco" required>
                     <div class="valid-feedback">
@@ -63,7 +63,7 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="col-md-1 position-relative start-50 translate-middle-x">
+                <div class="col-md-4 position-relative start-50 translate-middle-x">
                     <label for="frmEstoque" class="form-label">Estoque</label>
                     <input type="text" class="form-control" id="frmEstoque" name="frmEstoque" required>
                     <div class="valid-feedback">

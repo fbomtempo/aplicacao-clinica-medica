@@ -45,7 +45,7 @@
         <h1 class="text-center text-left pt-5 pb-5 display-6">Remover Produto</h1>
         <form action="rmvProduto.php" method="POST" class="row g-3 needs-validation text-center mb-3" novalidate>
             <div class="col-md-12">
-                <div class="col-md-1 position-relative start-50 translate-middle-x">
+                <div class="col-md-4 position-relative start-50 translate-middle-x">
                     <label class="form-label">Código</label>
                     <input type="number" class="form-control" id="frmCodigo" name="frmCodigo" value="<?php echo $codigo ?>" readonly>
                 </div>
@@ -57,13 +57,13 @@
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="col-md-1 position-relative start-50 translate-middle-x">
+                <div class="col-md-4 position-relative start-50 translate-middle-x">
                     <label class="form-label">Preço</label>
                     <input type="text" class="form-control" id="frmPreco" value="<?php echo $preco ?>" readonly>
                 </div>
             </div>
             <div class="col-md-12">
-                <div class="col-md-1 position-relative start-50 translate-middle-x">
+                <div class="col-md-4 position-relative start-50 translate-middle-x">
                     <label class="form-label">Estoque</label>
                     <input type="text" class="form-control" id="frmEstoque" value="<?php echo $estoque ?>" readonly>
                 </div>
