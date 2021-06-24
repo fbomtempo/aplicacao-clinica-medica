@@ -28,7 +28,7 @@
     
     Conexao::desconectar();
 
-    echo '<input type="hidden" id="estoque" value="<?php echo $estoque ?>">';
+    echo '<input type="hidden" id="estoque" value="' . $estoque . '">';
 ?>
 
 <!doctype html>
