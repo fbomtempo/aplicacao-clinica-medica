@@ -93,14 +93,14 @@
                             <td><?php echo $paciente['nascimento']; ?></td>
                             <td><?php echo $paciente['cidade']; ?></td>
                             <td>
-                                <span class="pe-1"><button class="botao-pequeno editar" onclick="JavaScript:location.href='frmEdtPaciente.php?codigo=' + 
-                            <?php echo $paciente['codigo']; ?>"><i class="fas fa-edit"></i></button></span>
+                                <span><button class="botao-pequeno editar" onclick="JavaScript:location.href='frmEdtProduto.php?codigo=' + 
+                            <?php echo $produto['codigo']; ?>"><i class="fas fa-edit"></i></button></span>
 
-                                <span class="pe-1"><button class="botao-pequeno deletar" onclick="JavaScript:location.href='frmRmvPaciente.php?codigo=' + 
-                            <?php echo $paciente['codigo']; ?>"><i class="fas fa-trash-alt"></i></button></span>
+                                <span><button class="botao-pequeno deletar" onclick="JavaScript:location.href='frmRmvProduto.php?codigo=' + 
+                            <?php echo $produto['codigo']; ?>"><i class="fas fa-trash-alt"></i></button></span>
 
-                                <button class="botao-pequeno visualizar" onclick="JavaScript:location.href='frmVisPaciente.php?codigo=' + 
-                            <?php echo $paciente['codigo']; ?>"><i class="fas fa-eye"></i></i></button>
+                                <span><button class="botao-pequeno visualizar" onclick="JavaScript:location.href='frmVisProduto.php?codigo=' + 
+                            <?php echo $produto['codigo']; ?>"><i class="fas fa-eye" style="padding-right: 0.1vw"></i></i></button></span>
                             </td>
                         </tr>
                     <?php
