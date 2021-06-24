@@ -24,7 +24,7 @@
 <body class="d-flex flex-column h-100">
     <!-- Include Navbar -->
     <?php include './import/navbar.php'; ?>
-    <h1 class="text-center pt-5 display-3">Bem-vindo(a) de volta, <?php echo $_SESSION['nome']; ?>!</h1>
+    <h1 class="text-center pt-5 display-4">Bem-vindo(a) de volta, <?php echo $_SESSION['nome']; ?>!</h1>
     <div class="container" style="padding-top: 9vh">
         <div class="row">
             <div class="pb-5 col d-flex justify-content-center">
@@ -59,8 +59,7 @@
             </div>
         </div>
     </div>
-    <br><br>
-    <div class="container" style="padding-bottom: 5vh">
+    <div class="container pb-5">
         <div class="row">
             <div class="pb-5 col d-flex justify-content-center">
                 <a href="" class="icon-link">

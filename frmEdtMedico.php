@@ -7,11 +7,11 @@
     $codigo = $_GET['codigo'];
 
     $pdo = Conexao::conectar();
+    
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "SELECT * FROM medico WHERE codigo=?;";
     $query = $pdo->prepare($sql);
     $query->execute(array($codigo));
-
     $dados = $query->fetch(PDO::FETCH_ASSOC);
 
     $nome = $dados['nome'];;

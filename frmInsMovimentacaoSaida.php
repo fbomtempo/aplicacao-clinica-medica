@@ -4,6 +4,20 @@
 
     include 'conexao.php';
 
+    $pdo = Conexao::conectar();
+
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'sistema_medico' AND TABLE_NAME = 'movimentacao';";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    $pk = $query->fetch(PDO::FETCH_ASSOC);
+
+    if (isset($_GET['erro'])) { 
+        if ($_GET['erro'] == 1) {
+            echo '<input type="hidden" id="erro" value="1">';
+        }
+    }
+
     if (isset($_GET['codprod'])) {
         $codprod = $_GET['codprod'];
     }
@@ -11,24 +25,17 @@
         $codprod = '';
     }
 
-    if (isset($_GET['erro'])) { 
-        if ($_GET['erro'] == 1) {
-?>
-            <input type="hidden" id="erro" value="1">
-<?php
-        }
-    }
-
-    $pdo = Conexao::conectar();
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
     $sql = "SELECT * FROM produto WHERE codigo=?;";
     $query = $pdo->prepare($sql);
     $query->execute(array($codprod));
     $dados = $query->fetch(PDO::FETCH_ASSOC);
-    $estoque = $dados['estoque'];;
+    $estoque = $dados['estoque'];
+    $nomeproduto = $dados['descricao'];
+
+    Conexao::desconectar();
+
+    echo '<input type="hidden" id="estoque" value="<?php echo $estoque ?>">';
 ?>
-<input type="hidden" id="estoque" value="<?php echo $estoque ?>">
 
 <!doctype html>
 <html lang="pt-br" class="h-100">
@@ -54,9 +61,9 @@
         <h1 class="text-left pt-5 pb-5 display-6">Nova Saída de Produtos</h1>
         <form action="insMovimentacaoSaida.php" method="POST" class="row g-3 needs-validation mb-3" novalidate>
             <div class="col-md-2">
-                <label for="frmCodigo" class="form-label">Código</label>
+                <label for="frmCodigo" class="form-label">Código da Mov.</label>
                 <div class="col-md-6">
-                    <input type="number" class="form-control" id="frmCodigo" name="frmCodigo" required>
+                    <input type="number" class="form-control" id="frmCodigo" name="frmCodigo" value="<?php echo $pk['AUTO_INCREMENT']; ?>" required>
                 </div>
                 <div class="valid-feedback">
                     Parece bom!
@@ -71,11 +78,11 @@
             </div>
             <div class="col-md-9"></div>
             <hr>
-            <div class="col-md-2">
+            <div class="col-md-8">
                 <label for="frmCodprod" id="lblFrmCodprod" class="form-label">Código do Produto</label>
                 <div class="col-md-6">
-                    <input type="number" class="form-control" id="frmCodprod" name="frmCodprod" value="<?php echo $codprod ?>" readonly required>
-                </div>
+                    <input type="text" class="form-control" value="<?php echo $nomeproduto ?>" readonly required>
+                    <input type="hidden" class="form-control" id="frmCodprod" name="frmCodprod" value="<?php echo $codprod ?>" readonly required>                </div>
                 <div class="valid-feedback">
                     Parece bom!
                 </div>
@@ -83,7 +90,7 @@
                     Informe o código de um produto.
                 </div>
             </div>
-            <div class="col-md-10"></div>
+            <div class="col-md-4"></div>
             <div class="col-md-1">
                 <label for="frmQtd" class="form-label">Quantidade</label>
                 <input type="number" class="form-control" id="frmQtd" name="frmQtd" onblur="totalEstoque()" required>

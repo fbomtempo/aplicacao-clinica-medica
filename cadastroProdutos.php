@@ -2,18 +2,18 @@
     // Verifica se o usuário está logado
     include 'verificaLogin.php';
 
+    include 'conexao.php';
+
+    $pdo = Conexao::conectar();
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "SELECT * FROM produto";
+
     if (isset($_GET['busca'])) {
         $busca = $_GET['busca'];
     }
     else {
         $busca = '';
     }
-
-    include 'conexao.php';
-
-    $pdo = Conexao::conectar();
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT * FROM produto";
 
     if ($busca != '') {
         $sql = "SELECT * FROM produto WHERE descricao LIKE '%" . $busca .  "%' ORDER BY descricao"; 
@@ -23,6 +23,8 @@
     }
 
     $listaProdutos = $pdo->query($sql);
+
+    Conexao::desconectar();
 ?>
 
 <!doctype html>

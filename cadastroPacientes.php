@@ -2,18 +2,18 @@
     // Verifica se o usuário está logado
     include 'verificaLogin.php';
 
+    include 'conexao.php';
+
+    $pdo = Conexao::conectar();
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "SELECT * FROM paciente";
+
     if (isset($_GET['busca'])) {
         $busca = $_GET['busca'];
     }
     else {
         $busca = '';
     }
-
-    include 'conexao.php';
-
-    $pdo = Conexao::conectar();
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT * FROM paciente";
 
     if ($busca != '') {
         $sql = "SELECT * FROM paciente WHERE nome LIKE '%" . $busca .  "%' ORDER BY nome, sobrenome"; 
@@ -23,6 +23,8 @@
     }
 
     $listaPacientes = $pdo->query($sql);
+
+    Conexao::desconectar();
 ?>
 
 <!doctype html>

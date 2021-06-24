@@ -1,6 +1,18 @@
 <?php
     // Verifica se o usuário está logado
     include 'verificaLogin.php';
+
+    include 'conexao.php';
+
+    $pdo = Conexao::conectar();
+    
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'sistema_medico' AND TABLE_NAME = 'produto';";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    $pk = $query->fetch(PDO::FETCH_ASSOC);
+
+    Conexao::desconectar();
 ?>
 
 <!doctype html>
@@ -29,7 +41,7 @@
             <div class="col-md-12">
                 <div class="col-md-4 position-relative start-50 translate-middle-x">
                     <label for="frmCodigo" class="form-label">Código</label>
-                    <input type="number" class="form-control" id="frmCodigo" name="frmCodigo" required>
+                    <input type="number" class="form-control" id="frmCodigo" name="frmCodigo" value="<?php echo $pk['AUTO_INCREMENT']; ?>" required>
                     <div class="valid-feedback">
                         Parece bom!
                     </div>
@@ -52,7 +64,7 @@
             </div>
             <div class="col-md-12">
                 <div class="col-md-4 position-relative start-50 translate-middle-x">
-                    <label for="frmPreco" class="form-label">Preço</label>
+                    <label for="frmPreco" class="form-label">Preço de Compra</label>
                     <input type="text" class="form-control" id="frmPreco" name="frmPreco" required>
                     <div class="valid-feedback">
                         Parece bom!

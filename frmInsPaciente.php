@@ -1,6 +1,18 @@
 <?php
     // Verifica se o usuário está logado
     include 'verificaLogin.php';
+
+    include 'conexao.php';
+
+    $pdo = Conexao::conectar();
+
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "SELECT AUTO_INCREMENT FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'sistema_medico' AND TABLE_NAME = 'paciente';";
+    $query = $pdo->prepare($sql);
+    $query->execute();
+    $pk = $query->fetch(PDO::FETCH_ASSOC);
+
+    Conexao::desconectar();
 ?>
 
 <!doctype html>
@@ -28,7 +40,7 @@
         <form action="insPaciente.php" method="POST" class="row g-3 needs-validation mb-3" novalidate>
             <div class="col-md-1">
                 <label for="frmCodigo" class="form-label">Código</label>
-                <input type="number" class="form-control" id="frmCodigo" name="frmCodigo" required>
+                <input type="number" class="form-control" id="frmCodigo" name="frmCodigo" value="<?php echo $pk['AUTO_INCREMENT']; ?>" required>
                 <div class="valid-feedback">
                     Parece bom!
                 </div>

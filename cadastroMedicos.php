@@ -1,12 +1,6 @@
 <?php
     // Verifica se o usuário está logado
-    include 'verificaLogin.php';
-
-    if (isset($_GET['busca'])) {
-        $busca = $_GET['busca'];
-    } else {
-        $busca = '';
-    }
+    include 'verificaLogin.php';  
 
     include 'conexao.php';
 
@@ -14,14 +8,21 @@
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "SELECT * FROM medico";
 
+    if (isset($_GET['busca'])) {
+        $busca = $_GET['busca'];
+    } else {
+        $busca = '';
+    }
+
     if ($busca != '') {
         $sql = "SELECT * FROM medico WHERE nome LIKE '%" . $busca .  "%' ORDER BY nome, sobrenome";
     } else {
         $sql = "SELECT * FROM medico";
-        $listaMedicos = $pdo->query($sql);
     }
 
     $listaMedicos = $pdo->query($sql);
+
+    Conexao::desconectar();
 ?>
 
 <!doctype html>

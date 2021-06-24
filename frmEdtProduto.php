@@ -7,17 +7,17 @@
     $codigo = $_GET['codigo'];
 
     $pdo = Conexao::conectar();
+
     $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $sql = "SELECT * FROM produto WHERE codigo=?;";
     $query = $pdo->prepare($sql);
     $query->execute(array($codigo));
-
     $dados = $query->fetch(PDO::FETCH_ASSOC);
 
     $descricao = $dados['descricao'];;
     $preco = $dados['preco'];;
-    $estoque = $dados['estoque'];
-     
+    $estoque = $dados['estoque'];  
+
     Conexao::desconectar();
 ?>
 

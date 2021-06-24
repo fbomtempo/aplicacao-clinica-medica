@@ -30,7 +30,8 @@
     $query = $pdo->prepare($sql);
     $query->execute(array($nome, $sobrenome, $nascimento, $sexo, $crm, $especialidade, 
     $rg, $cpf, $telres, $telcel, $email, $cep, $cidade, $estado, $endereco, $numero, $bairro, $complemento, $codigo));
-
+    
     Conexao::desconectar();
+
     header("location: cadastroMedicos.php");
 ?>

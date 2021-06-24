@@ -2,26 +2,28 @@
     // Verifica se o usuário está logado
     include 'verificaLogin.php';
 
+    include 'conexao.php';
+
+    $pdo = Conexao::conectar();
+    
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $sql = "SELECT * FROM funcionario";
+    
     if (isset($_GET['busca'])) {
         $busca = $_GET['busca'];
     } else {
         $busca = '';
     }
 
-    include 'conexao.php';
-
-    $pdo = Conexao::conectar();
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    $sql = "SELECT * FROM funcionario";
-
     if ($busca != '') {
         $sql = "SELECT * FROM funcionario WHERE nome LIKE '%" . $busca .  "%' ORDER BY nome, sobrenome";
     } else {
         $sql = "SELECT * FROM funcionario";
-        $listaFuncionarios = $pdo->query($sql);
     }
 
     $listaFuncionarios = $pdo->query($sql);
+
+    Conexao::desconectar();
 ?>
 
 <!doctype html>
