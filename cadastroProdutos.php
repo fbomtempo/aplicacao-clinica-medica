@@ -92,21 +92,27 @@
                             <td><?php echo $produto['preco']; ?></td>
                             <td><?php echo $produto['estoque']; ?></td>
                             <td>
-                                <span class="pe-1"><button class="botao-quad-pequeno adicionar" onclick="JavaScript:location.href='frmInsMovimentacaoEntrada.php?codprod=' + 
-                            <?php echo $produto['codigo']; ?>"><i class="fas fa-plus" id="add"></i></button></span>
-
-                                <span class="pe-1"><button class="botao-quad-pequeno remover" onclick="JavaScript:location.href='frmInsMovimentacaoSaida.php?codprod=' + 
-                            <?php echo $produto['codigo']; ?>"><i class="fas fa-minus" id="rem"></i></button></span>
+                                <span class="pe-1">
+                                    <button class="botao-quad-pequeno adicionar" onclick="JavaScript:location.href='frmInsMovimentacaoEntrada.php?codprod=' + <?php echo $produto['codigo']; ?>">
+                                        <i class="fas fa-plus" id="add"></i>
+                                    </button>
+                                </span>
+                                <span class="pe-1">
+                                    <button class="botao-quad-pequeno remover" onclick="JavaScript:location.href='frmInsMovimentacaoSaida.php?codprod=' + <?php echo $produto['codigo']; ?>">
+                                        <i class="fas fa-minus" id="rem"></i>
+                                    </button>
+                                </span>
                             </td>
                             <td>
-                                <span><button class="botao-pequeno editar" onclick="JavaScript:location.href='frmEdtProduto.php?codigo=' + 
-                            <?php echo $produto['codigo']; ?>"><i class="fas fa-edit"></i></button></span>
-
-                                <span><button class="botao-pequeno deletar" onclick="JavaScript:location.href='frmRmvProduto.php?codigo=' + 
-                            <?php echo $produto['codigo']; ?>"><i class="fas fa-trash-alt"></i></button></span>
-
-                                <span><button class="botao-pequeno visualizar" onclick="JavaScript:location.href='frmVisProduto.php?codigo=' + 
-                            <?php echo $produto['codigo']; ?>"><i class="fas fa-eye" style="padding-right: 0.1vw"></i></i></button></span>
+                                <button class="botao-pequeno editar" onclick="JavaScript:location.href='frmEdtProduto.php?codigo=' + <?php echo $produto['codigo']; ?>">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="botao-pequeno deletar" onclick="JavaScript:location.href='frmRmvProduto.php?codigo=' + <?php echo $produto['codigo']; ?>">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                                <button class="botao-pequeno visualizar" onclick="JavaScript:location.href='frmVisProduto.php?codigo=' + <?php echo $produto['codigo']; ?>">
+                                    <i class="fas fa-eye" style="padding-right: 0.1vw"></i></i>
+                                </button>
                             </td>
                         </tr>
                     <?php

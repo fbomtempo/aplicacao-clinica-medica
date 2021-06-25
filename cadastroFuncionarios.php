@@ -92,14 +92,15 @@
                             <td><?php echo $funcionario['cargo']; ?></td>
                             <td><?php echo $funcionario['cpf']; ?></td>
                             <td>
-                                <span class=><button class="botao-pequeno editar" onclick="JavaScript:location.href='frmEdtProduto.php?codigo=' + 
-                            <?php echo $produto['codigo']; ?>"><i class="fas fa-edit"></i></button></span>
-
-                                <span><button class="botao-pequeno deletar" onclick="JavaScript:location.href='frmRmvProduto.php?codigo=' + 
-                            <?php echo $produto['codigo']; ?>"><i class="fas fa-trash-alt"></i></button></span>
-
-                                <span class=""><button class="botao-pequeno visualizar" onclick="JavaScript:location.href='frmVisProduto.php?codigo=' + 
-                            <?php echo $produto['codigo']; ?>"><i class="fas fa-eye" style="padding-right: 0.1vw"></i></i></button></span>
+                                <button class="botao-pequeno editar" onclick="JavaScript:location.href='frmEdtFuncionario.php?codigo=' + <?php echo $funcionario['codigo']; ?>">
+                                    <i class="fas fa-edit"></i>
+                                </button>
+                                <button class="botao-pequeno deletar" onclick="JavaScript:location.href='frmRmvFuncionario.php?codigo=' + <?php echo $funcionario['codigo']; ?>">
+                                    <i class="fas fa-trash-alt"></i>
+                                </button>
+                                <button class="botao-pequeno visualizar" onclick="JavaScript:location.href='frmVisFuncionario.php?codigo=' + <?php echo $funcionario['codigo']; ?>">
+                                    <i class="fas fa-eye" style="padding-right: 0.1vw"></i></i>
+                                </button>
                             </td>
                         </tr>
                     <?php
