@@ -115,7 +115,7 @@
             <div class="col-md-3"></div>
             <div class="col-md-3">
                 <label for="frmRg" class="form-label">RG</label>
-                <input type="text" class="form-control" id="frmRg" name="frmRg" required>
+                <input type="text" class="form-control" id="frmRg" maxlength="9" name="frmRg" required>
                 <div class="valid-feedback">
                     Parece bom!
                 </div>
@@ -125,7 +125,7 @@
             </div>
             <div class="col-md-3">
                 <label for="frmCpf" class="form-label">CPF</label>
-                <input type="text" class="form-control" id="frmCpf" name="frmCpf" required>
+                <input type="text" class="form-control" id="frmCpf" maxlength="11" name="frmCpf" required>
                 <div class="valid-feedback">
                     Parece bom!
                 </div>
@@ -136,11 +136,11 @@
             <div class="col-md-6"></div>
             <div class="col-md-4">
                 <label for="frmTelres" class="form-label">Telefone Residencial</label>
-                <input type="text" class="form-control" id="frmTelres" name="frmTelres">
+                <input type="text" class="form-control" id="frmTelres" maxlength="10" name="frmTelres">
             </div>
             <div class="col-md-4">
                 <label for="frmTelcel" class="form-label">Telefone Celular</label>
-                <input type="text" class="form-control" id="frmTelcel" name="frmTelcel" required>
+                <input type="text" class="form-control" id="frmTelcel" maxlength="11" name="frmTelcel" required>
                 <div class="valid-feedback">
                     Parece bom!
                 </div>
@@ -163,7 +163,7 @@
             </div>
             <div class="col-md-3">
                 <label for="frmCep" class="form-label">CEP</label>
-                <input type="text" class="form-control" id="frmCep" name="frmCep" required>
+                <input type="text" class="form-control" id="frmCep" maxlength="8" name="frmCep" required>
                 <div class="valid-feedback">
                     Parece bom!
                 </div>

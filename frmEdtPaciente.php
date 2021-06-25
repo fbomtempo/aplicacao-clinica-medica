@@ -107,7 +107,7 @@
             </div>
             <div class="col-md-3">
                 <label for="frmRg" class="form-label">RG</label>
-                <input type="text" class="form-control" id="frmRg" name="frmRg" value="<?php echo $rg ?>" required>
+                <input type="text" class="form-control" id="frmRg" name="frmRg" maxlength="9" value="<?php echo $rg ?>" required>
                 <div class="valid-feedback">
                     Parece bom!
                 </div>
@@ -117,7 +117,7 @@
             </div>
             <div class="col-md-3">
                 <label for="frmCpf" class="form-label">CPF</label>
-                <input type="text" class="form-control" id="frmCpf" name="frmCpf" value="<?php echo $cpf ?>" required>
+                <input type="text" class="form-control" id="frmCpf" name="frmCpf" maxlength="11" value="<?php echo $cpf ?>" required>
                 <div class="valid-feedback">
                     Parece bom!
                 </div>
@@ -128,11 +128,11 @@
             <div class="col-md-4"></div>
             <div class="col-md-4">
                 <label for="frmTelres" class="form-label">Telefone Residencial</label>
-                <input type="text" class="form-control" id="frmTelres" name="frmTelres" value="<?php echo $telres ?>">
+                <input type="text" class="form-control" id="frmTelres" name="frmTelres" maxlength="10" value="<?php echo $telres ?>">
             </div>
             <div class="col-md-4">
                 <label for="frmTelcel" class="form-label">Telefone Celular</label>
-                <input type="text" class="form-control" id="frmTelcel" name="frmTelcel" value="<?php echo $telcel ?>" required>
+                <input type="text" class="form-control" id="frmTelcel" name="frmTelcel" maxlength="11" value="<?php echo $telcel ?>" required>
                 <div class="valid-feedback">
                     Parece bom!
                 </div>
@@ -155,7 +155,7 @@
             </div>
             <div class="col-md-3">
                 <label for="frmCep" class="form-label">CEP</label>
-                <input type="text" class="form-control" id="frmCep" name="frmCep" value="<?php echo $cep ?>" required>
+                <input type="text" class="form-control" id="frmCep" name="frmCep" maxlength="8" value="<?php echo $cep ?>" required>
                 <div class="valid-feedback">
                     Parece bom!
                 </div>
