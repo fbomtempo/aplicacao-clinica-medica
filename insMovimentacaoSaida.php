@@ -15,7 +15,6 @@
     $dados = $query->fetch(PDO::FETCH_ASSOC);
     $estoque = $dados['estoque'];;
 
-
     if ($estoque < $quantidade) {
         Conexao::desconectar();
         header("location: frmInsMovimentacaoSaida.php?codprod=$codprod&erro=1");

@@ -48,7 +48,7 @@
     <title>Nova Entrada de Produtos</title>
 </head>
 
-<body class="d-flex flex-column h-100">
+<body class="d-flex flex-column h-100" onload="estoqueInsuficiente('Erro: estoque insuficiente!')">
     <!-- Include Navbar -->
     <?php include './import/navbar.php'; ?>
     <div class="container">
@@ -82,7 +82,7 @@
             <div class="col-md-4"></div>
             <div class="col-md-1">
                 <label for="frmQtd" class="form-label">Quantidade</label>
-                <input type="number" class="form-control" id="frmQtd" name="frmQtd" onblur="totalEstoque()" required>
+                <input type="number" class="form-control" id="frmQtd" name="frmQtd" onkeyup="totalEstoque()" required>
                 <div class="valid-feedback">
                     Parece bom!
                 </div>
@@ -114,17 +114,30 @@
     <script src="./js/validacaoForms.js"></script>
 
     <script type="text/javascript">
+        function estoqueInsuficiente(msg) {
+            var erro = document.getElementById('erro').value;
+            if (erro == 1) {
+                window.alert(msg);
+            }
+        }
+
         function totalEstoque() {
             var estoque = parseInt(document.getElementById("estoque").value);
             var quantidade = parseInt(document.getElementById("frmQtd").value);
             var totalValor = document.getElementById("totalValor");
             var novoestoque = estoque + quantidade;
+            if (isNaN(novoestoque)) {
+                novoestoque = '';
+            }
             totalValor.innerHTML = novoestoque;
-            if (novoestoque >= 0) {
-                document.getElementById("total").setAttribute("style", "color: green; text-decoration: underline")
+            if (novoestoque == '') {
+                document.getElementById("total").setAttribute("style", "color: black;");
+            }
+            else if (novoestoque >= 0) {
+                document.getElementById("total").setAttribute("style", "color: green; text-decoration: underline");
             }
             else {
-                document.getElementById("total").setAttribute("style", "color: red; text-decoration: underline")
+                document.getElementById("total").setAttribute("style", "color: red; text-decoration: underline");
             }
         }
     </script>
