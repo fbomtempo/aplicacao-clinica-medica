@@ -188,7 +188,7 @@
             <div class="col-md-3">
                 <label for="frmEstado" class="form-label">Estado</label>
                 <select class="form-select" id="frmEstado" name="frmEstado" required>
-                    <option selected disabled value=""><?php echo $estado ?></option>
+                    <option selected disabled value="">Selecione</option>
                     <option value="AC" <?php if($estado == 'AC'){echo 'selected="selected"';} ?>>AC</option>
                     <option value="AL" <?php if($estado == 'AL'){echo 'selected="selected"';} ?>>AL</option>
                     <option value="AP" <?php if($estado == 'AP'){echo 'selected="selected"';} ?>>AP</option>
