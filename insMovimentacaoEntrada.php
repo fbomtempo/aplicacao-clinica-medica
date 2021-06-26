@@ -14,24 +14,17 @@
     $query->execute(array($codprod));
     $dados = $query->fetch(PDO::FETCH_ASSOC);
     $estoque = $dados['estoque'];;
-    $quantidade = $quantidade * (-1);
 
-    if ($estoque < $quantidade) {
-        Conexao::desconectar();
-        header("location: frmInsMovimentacaoSaida.php?codprod=$codprod&erro=1");
-    }
-    else {
-        $novoestoque = $estoque + $quantidade;
+    $novoestoque = $estoque + $quantidade;
 
-        $sql = "INSERT INTO movimentacao (codigo, tipo, codprod, quantidade) VALUES (?, ?, ?, ?);";
-        $query = $pdo->prepare($sql);
-        $query->execute(array($codigo, $tipo, $codprod, $quantidade));
+    $sql = "INSERT INTO movimentacao (codigo, tipo, codprod, quantidade) VALUES (?, ?, ?, ?);";
+    $query = $pdo->prepare($sql);
+    $query->execute(array($codigo, $tipo, $codprod, $quantidade));
         
-        $sql = "UPDATE produto SET estoque=? WHERE codigo=?;";
-        $query = $pdo->prepare($sql);
-        $query->execute(array($novoestoque, $codprod));
+    $sql = "UPDATE produto SET estoque=? WHERE codigo=?;";
+    $query = $pdo->prepare($sql);
+    $query->execute(array($novoestoque, $codprod));
 
-        Conexao::desconectar();
-        header("location: cadastroProdutos.php");
-    }
+    Conexao::desconectar();
+    header("location: cadastroProdutos.php");
 ?>
