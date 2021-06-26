@@ -99,7 +99,7 @@
                                 <button class="botao-pequeno deletar" onclick="JavaScript:location.href='frmRmvPaciente.php?codigo=' + <?php echo $paciente['codigo']; ?>">
                                     <i class="fas fa-trash-alt"></i>
                                 </button>
-                                <button class="botao-pequeno visualizar" onclick="JavaScript:location.href='frmVisPaciente.php?codigo=' + <?php echo $mepacientedico['codigo']; ?>">
+                                <button class="botao-pequeno visualizar" onclick="JavaScript:location.href='frmVisPaciente.php?codigo=' + <?php echo $paciente['codigo']; ?>">
                                     <i class="fas fa-eye" style="padding-right: 0.1vw"></i></i>
                                 </button>
                             </td>
